@@ -73,6 +73,25 @@ public class Colosseum {
      */
     public static Pokemon buildPokemon() {
         Pokemon tempPokemon = new Pokemon();
+        System.out.println("Please name your Pokemon")
+        tempPokemon.name = myScan.next();
+        System.out.println("How many hit points will it have (1-50)");
+        int hit = myScan.nextInt();
+        while (hit > MAX_HIT_POINTS || hit < 1) {
+            System.out.println("Sorry. Hit points must be between 1 and 50")
+            hit = myScan.nextInt();
+        }
+        System.out.println("Split fifty points between attack level and defense level");
+        System.out.println("Enter your attack level");
+        int attacklev = myScan.nextInt()
+        while (attacklev > MAX_HIT_POINTS || attacklev < 0) {
+            System.out.println("Sorry. The attack level must be between 1 and 49");
+        }
+        System.out.println("Enter your defense level");
+        int defencelev = myScan.nextInt();
+        while (defencelev > (MAX_HIT_POINTS - attacklev) || defencelev < 0) {
+            System.out.println("Sorry. The defense level must be between 1 and" + (MAX_HIT_POINTS - attacklev));
+        }
         return tempPokemon;
     }
 
@@ -91,6 +110,7 @@ public class Colosseum {
      */
     public static void printWhoIsAhead() {
         System.out.println("Implement me!");
+
     }
 
     /**
